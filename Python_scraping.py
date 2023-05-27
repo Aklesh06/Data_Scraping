@@ -86,7 +86,7 @@ ASIN=[]
 Product_Description=[]
 Manufacturer=[]
 header = ({'User-Agent':"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36",'Accept-Language': 'en-US, en;q=0.5'})
-for page in range(1):
+for page in range(1,25):
     req = requests.get("https://www.amazon.in/s?k=bags&page="+str(page)+"&crid=2M096C61O4MLT&qid=1685113589&sprefix=ba%2Caps%2C283&ref=sr_pg_"+str(page),headers=header)
     soup = bs(req.content , 'html.parser')
     urls = soup.find_all("a",attrs={'class':'a-link-normal s-underline-text s-underline-link-text s-link-style a-text-normal'})
